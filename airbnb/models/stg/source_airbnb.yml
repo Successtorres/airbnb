@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    tables:
+      - name: raw_hosts
+        columns:
+          - name: id
+          - name: name
+          - name: is_superhost
+          - name: created_at
+          - name: updated_at
+
+      - name: raw_listings
+        columns:
+          - name: id
+          - name: listing_url
+          - name: name
+          - name: room_type
+          - name: minimum_nights
+          - name: host_id
+          - name: price
+          - name: created_at
+          - name: updated_at
+
+      - name: raw_reviews
+        columns:
+          - name: listing_id
+          - name: date
+          - name: reviewer_name
+          - name: comments
+          - name: sentiment
