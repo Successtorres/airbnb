@@ -1,32 +1,66 @@
 version: 2
 
 sources:
-  - name: raw
+  - name: airbnb
+    schema: raw
     tables:
-      - name: raw_hosts
-        columns:
-          - name: id
-          - name: name
-          - name: is_superhost
-          - name: created_at
-          - name: updated_at
 
-      - name: raw_listings
-        columns:
-          - name: id
-          - name: listing_url
-          - name: name
-          - name: room_type
-          - name: minimum_nights
-          - name: host_id
-          - name: price
-          - name: created_at
-          - name: updated_at
-
-      - name: raw_reviews
+      - name: reviews
+        identifier: raw_reviews
+        description: "Raw table to record reviews left by customers"
         columns:
           - name: listing_id
+            data_type: number
           - name: date
+            data_type: timestamp_ntz
+            ## adding source freshness via date column for raw_reviews table
+            loaded_at_field: date 
+            freshness: 
+              warn_after: {count: 1, period: minute}
+              error_after: {count: 24, period: hour}
           - name: reviewer_name
+            data_type: varchar
           - name: comments
+            data_type: varchar
           - name: sentiment
+            data_type: varchar
+            
+      - name: hosts
+        identifier: raw_hosts
+        description: "Raw table to record the details about hosts for Airbnb"
+        columns:
+          - name: id
+            data_type: number
+          - name: name
+            data_type: varchar
+          - name: is_superhost
+            data_type: varchar
+          - name: created_at
+            data_type: timestamp_ntz
+          - name: updated_at
+            data_type: timestamp_ntz
+
+      - name: listings
+        identifier: raw_listings
+        description: "Raw table to record the listings available"
+        columns:
+          - name: id
+            data_type: number
+          - name: listing_url
+            data_type: varchar
+          - name: name
+            data_type: varchar
+          - name: room_type
+            data_type: varchar
+          - name: minimum_nights
+            data_type: number
+          - name: host_id
+            data_type: number
+          - name: price
+            data_type: varchar
+          - name: created_at
+            data_type: timestamp_ntz
+          - name: updated_at
+            data_type: timestamp_ntz
+
+      

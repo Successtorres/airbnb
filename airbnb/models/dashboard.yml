@@ -1,0 +1,12 @@
+version: 2
+
+exposures:
+  - name: DemoDashboard
+    type: dashboard
+    maturity: low
+    url: https://public.tableau.com/app/profile/kshitiz.dhakal/viz/HotelReveneuDashboard/HotelDashboard
+    description: Demo dashboard in Tableau created by Fellow | dashboard not related to this project
+  
+    owner:
+      name: Success
+      email: success@gritfeat.com

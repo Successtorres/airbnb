@@ -1,0 +1,11 @@
+version: 2
+
+analyses:
+  - name: sentiment_count
+    description: "Check count of sentiments"
+    docs:
+      show: true
+    columns:
+      - name: review_sentiment
+        description: "review sentiment value"
+      

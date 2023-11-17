@@ -1,7 +1,7 @@
 WITH source AS (
         SELECT *
 
-        FROM {{ source('raw', 'raw_listings') }}
+        FROM {{ source('airbnb', 'listings') }}
 )
 
 SELECT

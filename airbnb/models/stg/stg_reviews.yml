@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_reviews
+    description: ""
+    columns:
+      - name: listing_id
+        data_type: number
+        description: ""
+
+      - name: review_date
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: reviewer_name
+        data_type: varchar
+        description: ""
+
+      - name: review_comment
+        data_type: varchar
+        description: ""
+
+      - name: review_sentiment
+        data_type: varchar
+        description: ""
+        
+
+     

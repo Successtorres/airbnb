@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: stg_listings
+    description: ""
+    columns:
+      - name: listing_id
+        data_type: number
+        description: ""
+
+      - name: listing_url
+        data_type: varchar
+        description: ""
+
+      - name: listing_name
+        data_type: varchar
+        description: ""
+
+      - name: room_type
+        data_type: varchar
+        description: ""
+
+      - name: minimum_nights
+        data_type: number
+        description: ""
+        tests:
+          - positive_value
+
+      - name: host_id
+        data_type: number
+        description: ""
+
+      - name: price_str
+        data_type: varchar
+        description: ""
+
+      - name: created_at
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: updated_at
+        data_type: timestamp_ntz
+        description: ""
